@@ -14,6 +14,7 @@ int main(){
     void *handle  = dlopen(filename, RTLD_LAZY);
     func function = dlsym(handle, name);
     int result = function(first, second);
+    dlclose(handle);
     printf("%d\n", result);
     }
 
