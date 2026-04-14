@@ -127,7 +127,7 @@ getAtMost:
     mv a4, a0                           #store the value in temp variable
 loop:
     beqz a3, base_case_1                #check if address is 0
-    ld t2, 0(a3)                        #load the value
+    lw t2, 0(a3)                        #load the value
     bgt t2, a4, go_left                 #if current value is higher than lookup value, go left
     mv t1, t2                           #update temp variable
     ld a3, 16(a3)                       #go right

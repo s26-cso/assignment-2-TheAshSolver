@@ -5,9 +5,9 @@ fmt:
 .section .bss
 buffer:
 stack:
-.space 10000
+.space 1000000
 array:
-.space 10000
+.space 1000000
 result:
 .space 100000
 .section .text

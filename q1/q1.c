@@ -13,9 +13,9 @@ int main(){
     struct Node *new=  make_node(5);
     new = insert(new, 1);
     new = insert(new, 8);
-    new= insert(new, 0);
-    new= insert(new, 20);
-    printf("%d", getAtMost(1000, new));
+    new= insert(new, -3);
+    new= insert(new, -1);
+    printf("%d", getAtMost(-2, new));
 
 
 
