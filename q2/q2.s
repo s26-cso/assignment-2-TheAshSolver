@@ -58,7 +58,7 @@ slli t2, t1, 2          #shift by 2 cause integer
 add a6, t2, a5          #result array position
 add t2, t2, a3         #address of the integer
 lw t3, 0(t2)            #load integer itself
-    #<---------------- ACTUAL LOGIC BEGINS MY BELOVED TA ----------------------->
+    #<---------------- ACTUAL LOGIC BEGINS ----------------------->
 stack_loop:
 beqz s2, negative_one   #if size of stack is 0, put -1
 addi s3, s2, -1         #decrease s2 by 1
