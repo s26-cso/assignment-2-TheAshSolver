@@ -1,4 +1,7 @@
 #use a stack. A stack is going to be a custom array along with a pointer keeping track of remaining space
+# how it feels to spread misinformation
+
+
 .section .rodata
 fmt:
 .asciz "%d "

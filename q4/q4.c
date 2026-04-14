@@ -4,6 +4,7 @@
 typedef int (*func)(int, int);
 
 int main(){
+    //"I choose a lazy person to do a hard job. Because a lazy person will find an easy way to do it." - quote on lazy loading
     char name[10];
     int first, second;
     while(scanf("%s %d %d", name, &first, &second)==3){
