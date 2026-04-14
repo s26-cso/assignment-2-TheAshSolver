@@ -1,8 +1,7 @@
 #use a stack. A stack is going to be a custom array along with a pointer keeping track of remaining space
-# how it feels to spread misinformation
-
-
 .section .rodata
+new_line:
+.asciz "\n"
 fmt:
 .asciz "%d "
 .section .bss
@@ -61,7 +60,7 @@ slli t2, t1, 2          #shift by 2 cause integer
 add a6, t2, a5          #result array position
 add t2, t2, a3         #address of the integer
 lw t3, 0(t2)            #load integer itself
-    #<---------------- ACTUAL LOGIC BEGINS ----------------------->
+    #<---------------- ACTUAL LOGIC BEGINS  ----------------------->
 stack_loop:
 beqz s2, negative_one   #if size of stack is 0, put -1
 addi s3, s2, -1         #decrease s2 by 1
@@ -109,6 +108,8 @@ addi s1, s1, 1          #what do you think this does?
 j last_loop            
 
 done_2:
+lla a0, new_line
+call printf
 ld ra, 0(sp)
 ld a0, 8(sp)
 ld a1, 16(sp)

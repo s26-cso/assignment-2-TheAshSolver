@@ -9,9 +9,9 @@ right_string:
 
 .section .rodata
 success:
-.asciz "Yes"
+.asciz "Yes\n"
 failure:
-.asciz "No"
+.asciz "No\n"
 filename:
 .asciz "input.txt"
 .section .text
