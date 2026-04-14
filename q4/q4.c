@@ -4,15 +4,26 @@
 typedef int (*func)(int, int);
 
 int main(){
-    while(1){
     char name[10];
     int first, second;
-    scanf("%s %d %d", name, &first, &second);
+    while(scanf("%s %d %d", name, &first, &second)==3){
+   
+    
     char filename[200];
-    snprintf(filename, 20,"./lib%s.so",  name);
+    snprintf(filename, sizeof(filename),"./lib%s.so",  name);
     //printf("%s\n", filename);
     void *handle  = dlopen(filename, RTLD_LAZY);
+    if(handle==NULL){
+        printf("Error with file loading\n");
+        continue;
+
+    }
     func function = dlsym(handle, name);
+    if(function==NULL){
+        printf("Error iwht file loading");
+        dlclose(handle);
+        continue;
+    }
     int result = function(first, second);
     dlclose(handle);
     printf("%d\n", result);
